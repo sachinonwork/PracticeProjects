@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: camel-ftp-2.8.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.camel/camel-ftp/2.8.1/7cfaf509251f1b8d86f4bcec2d99eb0d11c2abe8/camel-ftp-2.8.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.camel/camel-ftp/2.8.1/83b6e00303b1503d5be828c5fc6c3ba950813184/camel-ftp-2.8.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

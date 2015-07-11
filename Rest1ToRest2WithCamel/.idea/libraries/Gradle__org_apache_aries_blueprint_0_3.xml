@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.aries.blueprint-0.3">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.aries.blueprint/org.apache.aries.blueprint/0.3/d8ae7be48dfbde9bcabf0d40515265105e9c87ef/org.apache.aries.blueprint-0.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.aries.blueprint/org.apache.aries.blueprint/0.3/7be4075488b914de0176d96c5615499ec8c1b9ca/org.apache.aries.blueprint-0.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

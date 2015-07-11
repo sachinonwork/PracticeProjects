@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: camel-freemarker-2.8.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.camel/camel-freemarker/2.8.1/38d026373abc94a38f8687e94ef9643b9d40acbe/camel-freemarker-2.8.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.camel/camel-freemarker/2.8.1/75521231d7ea133f6e53919eabcf57258b034d30/camel-freemarker-2.8.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: camel-velocity-2.8.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.camel/camel-velocity/2.8.1/167b38ab7344bd8695498e5ffe9b1883b85e1f8a/camel-velocity-2.8.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.camel/camel-velocity/2.8.1/3bc07befa53bfa7008bcda82172783b820e1014a/camel-velocity-2.8.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: camel-blueprint-2.8.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.camel/camel-blueprint/2.8.1/fe7230e239a4d6def97b923dc9e674e96f33a36/camel-blueprint-2.8.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.camel/camel-blueprint/2.8.1/bdf9953d3e0fe46455772e74defc6e3c2e957f9a/camel-blueprint-2.8.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

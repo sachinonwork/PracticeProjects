@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: camel-jdbc-2.8.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.camel/camel-jdbc/2.8.1/1373f8c8412b8baeddce4bedd76d677e8b6676b2/camel-jdbc-2.8.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.camel/camel-jdbc/2.8.1/28ea6aa62ab8169427c5f754dc5a428b0c66ecbe/camel-jdbc-2.8.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
