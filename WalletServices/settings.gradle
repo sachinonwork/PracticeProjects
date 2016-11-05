@@ -17,3 +17,5 @@ include 'services:webservice'
 */
 
 rootProject.name = 'WalletServices'
+include 'tomcat6x'
+include 'tomcat7x'

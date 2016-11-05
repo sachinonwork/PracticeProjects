@@ -3,7 +3,7 @@ build/
 classes/
 out/
 repo/
-.idea/
+/.idea/
 src/integTest/gradle/wrapper/gradle-wrapper.properties
 *.iml
 *.ipr
