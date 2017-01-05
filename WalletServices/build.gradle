@@ -1,36 +1,42 @@
 apply plugin: 'java'
 apply plugin: 'scala'
 apply plugin: 'groovy'
+apply plugin: 'idea-scala'
 
-repositories {
-    // Use 'jcenter' for resolving your dependencies.
-    // You can declare any Maven/Ivy/file repository here.
-    jcenter()
+
+repositories{
+    mavenCentral()
 }
 
-sourceSets {
-    integrationTest {
-        compileClasspath = sourceSets.main.output + configurations.testRuntime
-        runtimeClasspath = output + sourceSets.main.output + configurations.testRuntime
-        groovy {
-            srcDir 'src/integrationTest/groovy'
+buildscript {
+    repositories{
+        apply plugin: 'idea'
+        maven{
+            url "https://raw.github.com/rodionmoiseev/maven-repo/master/repo/releases"
         }
+    }
+    dependencies {
+        classpath group: 'org.rodion.gradle', name: 'idea-scala-plugin', version: '0.2'
     }
 }
 
-task integrationTest(type: Test) {
-    testClassesDir = sourceSets.integrationTest.output.classesDir
-    classpath = sourceSets.integrationTest.runtimeClasspath
-}
 
 dependencies {
+
     // The production code uses the SLF4J logging API at compile time
     compile 'org.slf4j:slf4j-api:1.7.21'
-    compile 'org.scala-lang:scala-library:2.11.1'
-    compile("org.codehaus.groovy:groovy-all:2.2.0")
-    compile("com.fasterxml.jackson.core:jackson-databind:2.2.0")
-    compile group: 'org.codehaus.groovy.modules.http-builder', name: 'http-builder', version: '0.6'
+    compile 'org.scala-lang:scala-library:2.9.2'
+    compile 'javax.ws.rs:jsr311-api:1.1.1'
+    compile 'org.codehaus.jackson:jackson-jaxrs:1.9.9'
+    compile 'org.codehaus.jackson:jackson-xc:1.9.9'
+    compile 'com.sun.jersey:jersey-bundle:1.14'
+    compile group: 'org.codehaus.groovy.modules.http-builder', name: 'http-builder', version: '2.4.4'
+
+    scalaApi 'org.scala-lang:scala-library:2.9.1'
+    scalaTools 'org.scala-lang:scala-library:2.9.1'
+    scalaTools 'org.scala-lang:scala-compiler:2.9.1'
 
     testCompile 'junit:junit:4.12'
-    testCompile("org.spockframework:spock-core:0.7-groovy-2.0")
+    testCompile("org.codehaus.groovy:groovy-all:2.2.0")
+    testCompile("org.spockframework:spock-core:1.0-groovy-2.4")
 }
