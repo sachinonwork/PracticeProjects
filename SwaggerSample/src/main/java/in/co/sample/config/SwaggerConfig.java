@@ -1,14 +1,16 @@
 package in.co.sample.config;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableAutoConfiguration
 public class SwaggerConfig {
 
-/*
+
     private SwaggerConfig springSwaggerConfig;
 
     @Autowired
@@ -33,5 +35,5 @@ public class SwaggerConfig {
                 //Here we specify URI patterns which will be included in Swagger docs. Use regex for this purpose.
                 .includePatterns("/landlords.*");
     }
-*/
+
 }
