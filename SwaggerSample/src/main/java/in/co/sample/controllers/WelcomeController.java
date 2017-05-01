@@ -12,7 +12,11 @@ import org.springframework.web.bind.annotation.*;
 public class WelcomeController {
 
     @RequestMapping(value = "/mymessages/{name}", method= RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+<<<<<<< HEAD
     public String showWelcomeMessage(@PathVariable("name") String name) {
+=======
+    public @ResponseBody String showWelcomeMessage(@PathVariable("name") String name) {
+>>>>>>> 76581de4171ad883b9a81db8cc47a1ea40263fd2
         return "Welcome " + name;
     }
 
