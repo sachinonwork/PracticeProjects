@@ -1,3 +1,5 @@
 target/
 *SwaggerSample*.*
 */.idea/*
+*/.idea/*.*
+.idea/**
