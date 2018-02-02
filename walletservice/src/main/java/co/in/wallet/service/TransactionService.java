@@ -14,8 +14,10 @@ public class TransactionService {
 
     public TransactionResponse postExpense(ExpenseDetail expenseDetail) {
         TransactionEntity transaction = new TransactionEntity();
-
-        transactionRepository.save(transaction);
+        transaction.setDescription(expenseDetail.getDescription());
+        transaction.setAmount(expenseDetail.getAmount());
+        transaction.setType(expenseDetail.getType());
+        transaction = transactionRepository.save(transaction);
         TransactionResponse transactionResponse = new TransactionResponse();
         return transactionResponse;
     }

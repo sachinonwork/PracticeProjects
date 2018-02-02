@@ -1,13 +1,15 @@
 package co.in.wallet.service.entities;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * Created by sdanayak on 1/2/18.
  */
-@Document
+@Document(collection = "transaction")
 public class TransactionEntity {
 
+    @Id
     private String id;
     private String description;
     private Double amount;
