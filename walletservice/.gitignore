@@ -1,0 +1,7 @@
+target
+.mvn
+/*.iml
+/*.mvn
+/.idea/
+**/.idea/*
+**/MongoExp/*
