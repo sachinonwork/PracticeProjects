@@ -1,11 +1,15 @@
 package co.in.wallet.controller.models;
 
+import org.springframework.data.annotation.Version;
+
 /**
  * Created by sdanayak on 1/2/18.
  */
 
 public class ExpenseDetail {
 
+    @Version
+    private Long version;
     private String type;
     private Double amount;
     private String description;
