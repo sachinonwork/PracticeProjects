@@ -4,8 +4,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Version;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.annotation.processing.SupportedSourceVersion;
-
 /**
  * Created by sdanayak on 1/2/18.
  */

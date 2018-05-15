@@ -25,7 +25,7 @@ public class ExpenseRecordController {
     @Autowired
     TransactionService transactionService;
 
-    @RequestMapping(value = "expense", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
+    @RequestMapping(value = "expense", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public TransactionResponse recordExpenseMade(ExpenseDetail expenseDetail) {
 
