@@ -1,7 +1,10 @@
 package co.in.wallet.service.entities;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Version;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import javax.annotation.processing.SupportedSourceVersion;
 
 /**
  * Created by sdanayak on 1/2/18.
@@ -11,6 +14,8 @@ public class TransactionEntity {
 
     @Id
     private String id;
+    @Version
+    private Long version;
     private String description;
     private Double amount;
     private String type;
