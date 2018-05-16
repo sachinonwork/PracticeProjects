@@ -8,9 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Calendar;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class TransactionService {
@@ -29,7 +27,7 @@ public class TransactionService {
         transaction.setCreated(Calendar.getInstance().getTime());
         transaction.setModified(Calendar.getInstance().getTime());
         transaction.setLocation(transactionRequest.getLocation());
-        //transaction.setVersion();
+        transaction.setVersion(Long.valueOf(Calendar.getInstance().getTimeInMillis()));
         transaction = transactionRepository.save(transaction);
         LOGGER.info("Transaction created with id:{}", transaction.getId());
         return transactionRequest;
@@ -44,6 +42,7 @@ public class TransactionService {
             transaction.setAmount(transactionEntity.getAmount());
             transaction.setCurrency(transactionEntity.getCurrency());
             transaction.setLocation(transactionEntity.getLocation());
+            transaction.seteTag(String.valueOf(transactionEntity.getVersion()));
             transactionResponseSet.add(transaction);
         });
         return transactionResponseSet;
