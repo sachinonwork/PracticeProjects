@@ -1,21 +1,15 @@
 package co.in.wallet.controller;
 
 
-import co.in.wallet.controller.models.ExpenseDetail;
 import co.in.wallet.controller.models.Transaction;
-import co.in.wallet.controller.models.TransactionResponse;
 import co.in.wallet.service.TransactionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
 
@@ -42,8 +36,14 @@ public class ExpenseRecordController {
     @RequestMapping(value = "expense", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Set> getAllExpenses() {
-
         return ResponseEntity.ok(transactionService.getAllExpenses());
+    }
+
+
+    @RequestMapping(value = "expense/transactionId", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Transaction> getAllExpenses(@RequestParam String transactionId) {
+        return ResponseEntity.ok(transactionService.getExpense(transactionId));
     }
 
 }

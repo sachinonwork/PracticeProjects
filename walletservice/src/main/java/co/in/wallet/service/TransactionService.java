@@ -27,7 +27,7 @@ public class TransactionService {
         transaction.setCreated(Calendar.getInstance().getTime());
         transaction.setModified(Calendar.getInstance().getTime());
         transaction.setLocation(transactionRequest.getLocation());
-        transaction.setVersion(Long.valueOf(Calendar.getInstance().getTimeInMillis()));
+        transaction.setVersion(String.valueOf(Calendar.getInstance().getTimeInMillis()));
         transaction = transactionRepository.save(transaction);
         LOGGER.info("Transaction created with id:{}", transaction.getId());
         return transactionRequest;
@@ -42,9 +42,21 @@ public class TransactionService {
             transaction.setAmount(transactionEntity.getAmount());
             transaction.setCurrency(transactionEntity.getCurrency());
             transaction.setLocation(transactionEntity.getLocation());
-            transaction.seteTag(String.valueOf(transactionEntity.getVersion()));
+            transaction.setVersion(String.valueOf(transactionEntity.getVersion()));
             transactionResponseSet.add(transaction);
         });
         return transactionResponseSet;
+    }
+
+    public Transaction getExpense(String transactionId) {
+        Optional<TransactionEntity> transactionEntity = transactionRepository.findById(transactionId);
+        Transaction transaction = new Transaction();
+        if(transactionEntity != null && transactionEntity.isPresent()) {
+            transaction.setVersion(transactionEntity.get().getVersion());
+            transaction.setLocation(transactionEntity.get().getLocation());
+            transaction.setCurrency(transactionEntity.get().getCurrency());
+            transaction.setDescription(transactionEntity.get().getDescription());
+        }
+        return transaction;
     }
 }

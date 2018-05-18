@@ -6,7 +6,7 @@ public class Transaction {
     private Double amount;
     private String currency;
     private String location;
-    private String eTag;
+    private String version;
 
 
     public String getDescription() {
@@ -41,11 +41,11 @@ public class Transaction {
         this.location = location;
     }
 
-    public String geteTag() {
-        return eTag;
+    public String getVersion() {
+        return version;
     }
 
-    public void seteTag(String eTag) {
-        this.eTag = eTag;
+    public void setVersion(String version) {
+        this.version = version;
     }
 }
