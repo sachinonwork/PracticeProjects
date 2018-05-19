@@ -40,7 +40,7 @@ public class ExpenseRecordController {
     }
 
 
-    @RequestMapping(value = "expense/transactionId", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE,
+    @RequestMapping(value = "expense/{transactionId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Transaction> getAllExpenses(@RequestParam String transactionId) {
         return ResponseEntity.ok(transactionService.getExpense(transactionId));

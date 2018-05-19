@@ -6,7 +6,7 @@ public class Transaction {
     private Double amount;
     private String currency;
     private String location;
-    private String version;
+    private Long version;
 
 
     public String getDescription() {
@@ -41,11 +41,11 @@ public class Transaction {
         this.location = location;
     }
 
-    public String getVersion() {
+    public Long getVersion() {
         return version;
     }
 
-    public void setVersion(String version) {
+    public void setVersion(Long version) {
         this.version = version;
     }
 }

@@ -8,7 +8,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.Calendar;
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class TransactionService {
@@ -17,6 +20,7 @@ public class TransactionService {
     @Autowired
     TransactionRepository transactionRepository;
 
+    private Long timeStamp = Calendar.getInstance().getTimeInMillis();
 
     public Transaction postExpense(Transaction transactionRequest) {
         TransactionEntity transaction = new TransactionEntity();
@@ -27,9 +31,9 @@ public class TransactionService {
         transaction.setCreated(Calendar.getInstance().getTime());
         transaction.setModified(Calendar.getInstance().getTime());
         transaction.setLocation(transactionRequest.getLocation());
-        transaction.setVersion(String.valueOf(Calendar.getInstance().getTimeInMillis()));
+        transaction.setVersion(timeStamp);
         transaction = transactionRepository.save(transaction);
-        LOGGER.info("Transaction created with id:{}", transaction.getId());
+        LOGGER.info("Transaction created with id:{} and version:{}", transaction.getId(), transaction.getVersion());
         return transactionRequest;
     }
 
@@ -42,7 +46,7 @@ public class TransactionService {
             transaction.setAmount(transactionEntity.getAmount());
             transaction.setCurrency(transactionEntity.getCurrency());
             transaction.setLocation(transactionEntity.getLocation());
-            transaction.setVersion(String.valueOf(transactionEntity.getVersion()));
+            transaction.setVersion(transactionEntity.getVersion());
             transactionResponseSet.add(transaction);
         });
         return transactionResponseSet;

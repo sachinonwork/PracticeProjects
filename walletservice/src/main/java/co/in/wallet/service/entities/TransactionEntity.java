@@ -15,7 +15,7 @@ public class TransactionEntity {
     @Id
     private String id;
     @Version
-    private String version;
+    private Long version;
     private String description;
     private Double amount;
     private String type;
@@ -24,11 +24,11 @@ public class TransactionEntity {
     private Date created;
     private Date modified;
 
-    public String getVersion() {
+    public Long getVersion() {
         return version;
     }
 
-    public void setVersion(String version) {
+    public void setVersion(Long version) {
         this.version = version;
     }
 
