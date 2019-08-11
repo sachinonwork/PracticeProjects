@@ -24,7 +24,7 @@ public class ExpenseRecordController {
     @Autowired
     TransactionService transactionService;
 
-    @RequestMapping(value = "expense", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
+    @PostMapping(value = "expense", produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Transaction> recordExpenseMade(@RequestBody Transaction transaction) {
 
@@ -33,14 +33,14 @@ public class ExpenseRecordController {
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
-    @RequestMapping(value = "expense", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE,
+    @GetMapping(value = "expense", produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Set> getAllExpenses() {
         return ResponseEntity.ok(transactionService.getAllExpenses());
     }
 
 
-    @RequestMapping(value = "expense/{transactionId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE,
+    @GetMapping(value = "expense/{transactionId}", produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Transaction> getAllExpenses(@RequestParam String transactionId) {
         return ResponseEntity.ok(transactionService.getExpense(transactionId));

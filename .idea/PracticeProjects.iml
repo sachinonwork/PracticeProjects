@@ -9,6 +9,13 @@
       <sourceFolder url="file://$MODULE_DIR$/WalletServices/src/main/scala" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WalletServices/src/test/groovy" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/walletservice/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/walletservice/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/SwaggerSample/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SpringSamples/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SpringSamples/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/walletservice/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/walletservice/src/test/resources" type="java-test-resource" />
     </content>
     <orderEntry type="library" name="groovy-2.4.5" level="application" />
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
