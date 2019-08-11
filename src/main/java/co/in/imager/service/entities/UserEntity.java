@@ -1,10 +1,8 @@
 package co.in.imager.service.entities;
 
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,16 +11,16 @@ import javax.persistence.Id;
 @Getter
 @Builder
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Component
 public class UserEntity {
 
     @Id
     private String userId;
 
     @NonNull
-    private String firstName;
-
-    @NonNull
-    private String lastName;
+    private String name;
 
     @NonNull
     private String address;

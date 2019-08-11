@@ -1,25 +1,30 @@
 package co.in.imager.simple;
 
 import co.in.imager.controller.UserController;
+import co.in.imager.exception.RequestInvalidException;
 import co.in.imager.model.User;
+import co.in.imager.service.entities.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration
+@RunWith(MockitoJUnitRunner.class)
 public class UserControllerTest {
 
-    @Autowired
+    @InjectMocks
     private UserController userController;
 
-    @Autowired
-    private User user;
+    @Mock
+    private UserRepository userRepository;
 
-    @Test
-    public void shouldReturnBadRequestForInvalidBody() {
+    @Test (expected = RequestInvalidException.class)
+    public void shouldReturnBadRequestForInvalidBody() throws RequestInvalidException {
 
+        User userRequest = new User("James", "", null, null, null);
+        /*userRequest.setName("James");
+        userRequest.setAuthData(null);*/
+        userController.createUser(userRequest);
     }
 }

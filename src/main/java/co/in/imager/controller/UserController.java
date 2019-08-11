@@ -1,6 +1,7 @@
 package co.in.imager.controller;
 
 
+import co.in.imager.exception.RequestInvalidException;
 import co.in.imager.model.User;
 import co.in.imager.model.UserDetailsCheck;
 import co.in.imager.service.UserRegisterService;
@@ -16,14 +17,13 @@ public class UserController {
 
     @Autowired
     private UserDetailsCheck userDetailsCheck;
+    @Autowired
     private UserRegisterService userService;
 
     @PostMapping
-    public ResponseEntity<User> createUser(@RequestBody User userBody) {
+    public ResponseEntity<User> createUser(@RequestBody User userBody) throws RequestInvalidException {
 
-        if (!userDetailsCheck.isValidUserDetails(userBody)) {
-            return ResponseEntity.badRequest().build();
-        }
+        userDetailsCheck.isValidUserDetails(userBody);
         userService.createUser(userBody);
         return ResponseEntity.status(HttpStatus.CREATED).build();
 

@@ -15,7 +15,7 @@ public class UserRegisterService {
 
     public void createUser(User userBody) {
         UserEntity userEntity = new UserEntity();
-        userEntity.setFirstName(userBody.getFirstName());
+        userEntity.setName(userBody.getName());
 
          userEntityRepo.save(userEntity);
     }

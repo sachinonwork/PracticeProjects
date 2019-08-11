@@ -1,17 +1,18 @@
 package co.in.imager.model;
 
+import co.in.imager.exception.RequestInvalidException;
+
 public class UserDetailsCheck {
 
-    public boolean isValidUserDetails(User userDetails) {
+    public void isValidUserDetails(User userDetails) throws RequestInvalidException {
         if(userDetails == null) {
-            return Boolean.FALSE;
+            throw new RequestInvalidException("User request is invalid");
         }
         if(userDetails.getName() == null) {
-            return Boolean.FALSE;
+            throw new RequestInvalidException("User request is invalid");
         }
         if(userDetails.getAuthData() == null) {
-            return Boolean.FALSE;
+            throw new RequestInvalidException("User request is invalid");
         }
-        return Boolean.TRUE;
     }
 }

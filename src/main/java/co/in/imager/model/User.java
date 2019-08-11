@@ -1,10 +1,7 @@
 package co.in.imager.model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.stereotype.Component;
 
 
@@ -15,9 +12,12 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 public class User {
 
+    private String userId;
+    @NonNull
     private String name;
     private String address;
     private String city;
+    @NonNull
     private AuthInfo authData;
 
 }
