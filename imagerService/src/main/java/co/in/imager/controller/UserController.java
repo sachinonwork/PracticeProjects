@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import static org.springframework.http.MediaType.APPLICATION_JSON;
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+
 @RestController(value = "/api/v1/user")
 public class UserController {
 
@@ -20,7 +23,7 @@ public class UserController {
     @Autowired
     private UserRegisterService userService;
 
-    @PostMapping
+    @PostMapping (consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<User> createUser(@RequestBody User userBody) throws RequestInvalidException {
 
         userDetailsCheck.isValidUserDetails(userBody);

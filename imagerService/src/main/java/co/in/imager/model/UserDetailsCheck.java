@@ -8,11 +8,9 @@ public class UserDetailsCheck {
         if(userDetails == null) {
             throw new RequestInvalidException("User request is invalid");
         }
-        if(userDetails.getName() == null) {
+        if(userDetails.getUserId() == null || userDetails.getPassword() == null) {
             throw new RequestInvalidException("User request is invalid");
         }
-        if(userDetails.getAuthData() == null) {
-            throw new RequestInvalidException("User request is invalid");
-        }
+
     }
 }

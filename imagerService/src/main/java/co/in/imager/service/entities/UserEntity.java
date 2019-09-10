@@ -1,30 +1,31 @@
 package co.in.imager.service.entities;
 
 
-import lombok.*;
-import org.springframework.stereotype.Component;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-@Getter
-@Builder
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@Component
 public class UserEntity {
 
     @Id
-    private String userId;
+    private String userName;
 
-    @NonNull
-    private String name;
+    private String password;
 
-    @NonNull
-    private String address;
 
-    @NonNull
-    private AuthDataEntity authData;
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

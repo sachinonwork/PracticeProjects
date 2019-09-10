@@ -15,8 +15,9 @@ public class UserRegisterService {
 
     public void createUser(User userBody) {
         UserEntity userEntity = new UserEntity();
-        userEntity.setName(userBody.getName());
-
-         userEntityRepo.save(userEntity);
+        userEntity.setUserName(userBody.getUserId());
+        //@TODO: encrypt before save
+        userEntity.setPassword(userBody.getPassword());
+        userEntityRepo.save(userEntity);
     }
 }
