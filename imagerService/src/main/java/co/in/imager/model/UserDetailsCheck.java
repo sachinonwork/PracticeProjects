@@ -1,7 +1,10 @@
 package co.in.imager.model;
 
 import co.in.imager.exception.RequestInvalidException;
+import org.springframework.stereotype.Component;
 
+
+@Component
 public class UserDetailsCheck {
 
     public void isValidUserDetails(User userDetails) throws RequestInvalidException {

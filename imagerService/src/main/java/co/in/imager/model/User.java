@@ -10,10 +10,6 @@ public class User {
     private String userId;
     private String password;
 
-    public User(String userName, String password) {
-        this.userId = userName;
-        this.password = password;
-    }
 
     public String getUserId() {
         return userId;

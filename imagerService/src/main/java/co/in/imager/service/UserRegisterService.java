@@ -13,8 +13,10 @@ public class UserRegisterService {
     @Autowired
     private UserRepository userEntityRepo;
 
+    @Autowired
+    private UserEntity userEntity;
+
     public void createUser(User userBody) {
-        UserEntity userEntity = new UserEntity();
         userEntity.setUserName(userBody.getUserId());
         //@TODO: encrypt before save
         userEntity.setPassword(userBody.getPassword());
