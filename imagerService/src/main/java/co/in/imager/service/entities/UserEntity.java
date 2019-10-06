@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.Objects;
 
 @Entity
 @Component
@@ -30,5 +31,20 @@ public class UserEntity {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof UserEntity)) return false;
+        UserEntity that = (UserEntity) o;
+        return Objects.equals(userName, that.userName) &&
+                Objects.equals(password, that.password);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(userName, password);
     }
 }
