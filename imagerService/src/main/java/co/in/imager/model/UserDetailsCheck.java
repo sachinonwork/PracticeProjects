@@ -1,10 +1,12 @@
 package co.in.imager.model;
 
 import co.in.imager.exception.RequestInvalidException;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.stereotype.Service;
 
 
-@Component
+@Service
+@Configurable
 public class UserDetailsCheck {
 
     public void isValidUserDetails(User userDetails) throws RequestInvalidException {

@@ -2,7 +2,7 @@ package co.in.imager.simple;
 
 import co.in.imager.ImagerServiceExceptionHandler;
 import co.in.imager.controller.UserController;
-import co.in.imager.model.User;
+import co.in.imager.exception.RequestInvalidException;
 import co.in.imager.service.entities.UserRepository;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.junit.BeforeClass;
@@ -10,13 +10,17 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration;
 import org.springframework.http.HttpStatus;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.web.servlet.MockMvcBuilder;
 
 import static io.restassured.module.mockmvc.RestAssuredMockMvc.given;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 
-@RunWith(MockitoJUnitRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 public class ImagerServiceTest {
 
     @Mock
@@ -31,7 +35,7 @@ public class ImagerServiceTest {
     @BeforeClass
     public static void setup() {
 
-        RestAssuredMockMvc.standaloneSetup(new UserController());
+        RestAssuredMockMvc.standaloneSetup(MockMvcBuilder.class);
        /* String port = System.getProperty("server.port");
 
         if(port == null) {
@@ -54,11 +58,10 @@ public class ImagerServiceTest {
     }
 
     @Test
-    public void userCreatedSuccessfully() {
-
-       // Mockito.doNothing().when(userRepository.save(any(UserEntity.class)));
+    public void userCreatedSuccessfully() throws RequestInvalidException {
+        //Mockito.doNothing().when(userRepository.save(any(UserEntity.class)));
        // User user = new User("myUser", "PasswordSample");
-
+        //when(userService.createUser(any()))
         given()
                 .contentType(APPLICATION_JSON.toString())
                 .body("{\"userId\" : \"kimSami\", \"password\" : \"samplePass\"}")
