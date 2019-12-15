@@ -31,7 +31,7 @@ public class TrialHazelcastComponent {
     }
 
     @GetMapping(value = "/fetch/{key}")
-    public String readValueOf(@RequestParam String key) {
+    public String readValueOf(@PathVariable String key) {
         Map<String, String> hazelcastMap = hazelcastInstance.getMap("my-map");
         return hazelcastMap.get(key);
     }
