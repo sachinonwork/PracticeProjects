@@ -1,14 +1,15 @@
 .idea
-<<<<<<< HEAD
 target
 *.iml
 /.idea/
-
-=======
+**/.idea/**
 *.class
-/target/
+**/target/
 target
 .svn
 .git
 *.iml
->>>>>>> bf55baf55b4e7bea3f83c6992352e68ffbde200e
+*/*.idea
+*/.mvn/
+**/*.class
+.mvn

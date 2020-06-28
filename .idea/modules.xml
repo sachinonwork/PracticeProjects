@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/PracticeProjects.iml" filepath="$PROJECT_DIR$/.idea/PracticeProjects.iml" />
-      <module fileurl="file://$PROJECT_DIR$/walletservice/walletservice.iml" filepath="$PROJECT_DIR$/walletservice/walletservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SampleHtppClientSDK/SampleHtppClientSDK.iml" filepath="$PROJECT_DIR$/SampleHtppClientSDK/SampleHtppClientSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SampleHttpCache1/SampleHttpCache1.iml" filepath="$PROJECT_DIR$/SampleHttpCache1/SampleHttpCache1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SampleHttpCache2/SampleHttpCache2.iml" filepath="$PROJECT_DIR$/SampleHttpCache2/SampleHttpCache2.iml" />
     </modules>
   </component>
 </project>

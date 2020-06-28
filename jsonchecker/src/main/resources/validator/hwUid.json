@@ -1,0 +1,173 @@
+{
+  "$schema": "http://sampleJson/validator",
+  "$id": "sampleJsonValidator",
+  "type": "object",
+  "title": "Schema for sample Json Validation",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "customInfo": {
+        "customerVisualProperties": {
+          "displayName": "Jack Welch",
+          "displayImage": {
+            "id": "32we8h73223wetrhtrh",
+            "category": "avatar"
+          }
+        },
+        "wifiDetails": {
+          "bSsid": "3498h98hewe34w",
+          "location": "9389sdfhsd"
+        }
+      }
+    }
+  ],
+  "required": [
+    "customInfo"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "customInfo": {
+      "$id": "#/properties/customInfo",
+      "type": "object",
+      "title": "The customInfo schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "customerVisualProperties": {
+            "displayName": "Jack Welch",
+            "displayImage": {
+              "id": "32we8h73223wetrhtrh",
+              "category": "avatar"
+            }
+          },
+          "wifiDetails": {
+            "bSsid": "3498h98hewe34w",
+            "location": "9389sdfhsd"
+          }
+        }
+      ],
+      "required": [
+        "customerVisualProperties",
+        "wifiDetails"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "customerVisualProperties": {
+          "$id": "#/properties/customInfo/properties/customerVisualProperties",
+          "type": "object",
+          "title": "The customerVisualProperties schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": {},
+          "examples": [
+            {
+              "displayName": "Jack Welch",
+              "displayImage": {
+                "id": "32we8h73223wetrhtrh",
+                "category": "avatar"
+              }
+            }
+          ],
+          "required": [
+            "displayName",
+            "displayImage"
+          ],
+          "additionalProperties": true,
+          "properties": {
+            "displayName": {
+              "$id": "#/properties/customInfo/properties/customerVisualProperties/properties/displayName",
+              "type": "string",
+              "title": "The displayName schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "Jack Welch"
+              ]
+            },
+            "displayImage": {
+              "$id": "#/properties/customInfo/properties/customerVisualProperties/properties/displayImage",
+              "type": "object",
+              "title": "The displayImage schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": {},
+              "examples": [
+                {
+                  "id": "32we8h73223wetrhtrh",
+                  "category": "avatar"
+                }
+              ],
+              "required": [
+                "id",
+                "category"
+              ],
+              "additionalProperties": true,
+              "properties": {
+                "id": {
+                  "$id": "#/properties/customInfo/properties/customerVisualProperties/properties/displayImage/properties/id",
+                  "type": "string",
+                  "title": "The id schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                    "32we8h73223wetrhtrh"
+                  ]
+                },
+                "category": {
+                  "$id": "#/properties/customInfo/properties/customerVisualProperties/properties/displayImage/properties/category",
+                  "type": "string",
+                  "title": "The category schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                    "avatar"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "wifiDetails": {
+          "$id": "#/properties/customInfo/properties/wifiDetails",
+          "type": "object",
+          "title": "The wifiDetails schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": {},
+          "examples": [
+            {
+              "bSsid": "3498h98hewe34w",
+              "location": "9389sdfhsd"
+            }
+          ],
+          "required": [
+            "bSsid",
+            "location"
+          ],
+          "additionalProperties": true,
+          "properties": {
+            "bSsid": {
+              "$id": "#/properties/customInfo/properties/wifiDetails/properties/bSsid",
+              "type": "string",
+              "title": "The bSsid schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "3498h98hewe34w"
+              ]
+            },
+            "location": {
+              "$id": "#/properties/customInfo/properties/wifiDetails/properties/location",
+              "type": "string",
+              "title": "The location schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "9389sdfhsd"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
