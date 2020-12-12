@@ -1,5 +1,5 @@
 import json
-from __builtin__ import range, str, int, set, dict
+from __builtin__ import range, str, int, set, dict, object
 from builtins import len
 
 from typing import Tuple
@@ -45,7 +45,7 @@ class PlantixApiClient(object):
             Request(f"{self.API_ENDPOINT}{resource}", method=method)
         )
 
-    def get(self, uid: str) -> PlantExpert:
+    def get(self, uid = str) -> PlantExpert:
         """Get a community plant expert by uid.
 
         @param uid: ID of the expert to fetch
@@ -53,11 +53,6 @@ class PlantixApiClient(object):
         response = self._fetch("GET", f"/experts/{uid}")
         topics, following = json.load(response)
         return PlantExpert(uid, topics, following)
-
-
-    def count_of_matches(self, prime_expert_topics, match_expert_topics):
-        topics = set(prime_expert_topics).intersection(match_expert_topics)
-        if topics
 
 
     def find_topcs(self, uid = str, n = int):

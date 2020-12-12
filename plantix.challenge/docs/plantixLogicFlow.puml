@@ -1,0 +1,17 @@
+@startuml
+participant PlantixApiClient as plantixClient
+participant PlantixService as plantixService
+
+--> plantixClient: find topics called
+plantixClient --> plantixService: get plant expert of provided id
+plantixService --> plantixClient : return data
+loop for all following list of plant expert
+  plantixClient --> plantixService : get plant expert of following id
+  plantixService --> plantixClient : return data
+  plantixClient --> plantixClient: get match current and main plant expert topics
+  plantixClient --> plantixClient: match of topics put in collection with count
+end
+plantixClient --> plantixClient : sort topics collection on count
+plantixClient --> plantixClient : get the first n element from collection
+<-- plantixClient: return collection
+@enduml
