@@ -1,5 +1,5 @@
 import json
-from __builtin__ import range, str, int, set
+from __builtin__ import range, str, int, set, dict
 from builtins import len
 
 from typing import Tuple
@@ -61,8 +61,14 @@ class PlantixApiClient(object):
 
 
     def find_topcs(self, uid = str, n = int):
-
+        result = MatchResults()
+        list_of_all_match = dict(result)
         prime_plant_expert = self.get(self, uid)
         for loop in range(len(prime_plant_expert.topics)):
             match_plant_expert = self.get(self, loop)
-            response = self.count_of_matches(self, prime_plant_expert.topics, match_plant_expert.topics)
+            topics = set(prime_plant_expert.topics).intersection(match_plant_expert.topics)
+            if len(list_of_all_match) == 0:
+                list_of_all_match.update({topics:1})
+            else:
+                temp = list_of_all_match.get(topics)
+                list_of_all_match.update({temp.topic: temp.count + 1})
