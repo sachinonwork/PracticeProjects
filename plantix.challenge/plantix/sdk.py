@@ -1,6 +1,6 @@
 import json
 from __builtin__ import range, str, int, set, dict, object
-from builtins import len
+from builtins import len, sorted
 
 from typing import Tuple
 from dataclasses import dataclass
@@ -55,7 +55,7 @@ class PlantixApiClient(object):
         return PlantExpert(uid, topics, following)
 
 
-    def find_topcs(self, uid = str, n = int):
+    def find_topics(self, uid = str, n = int):
         result = MatchResults()
         list_of_all_match = dict(result)
         prime_plant_expert = self.get(self, uid)
@@ -67,3 +67,5 @@ class PlantixApiClient(object):
             else:
                 temp = list_of_all_match.get(topics)
                 list_of_all_match.update({temp.topic: temp.count + 1})
+        result = sorted(list_of_all_match)
+        response = result(n)
