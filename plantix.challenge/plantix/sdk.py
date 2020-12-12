@@ -67,5 +67,5 @@ class PlantixApiClient(object):
             else:
                 temp = list_of_all_match.get(topics)
                 list_of_all_match.update({temp.topic: temp.count + 1})
-        result = sorted(list_of_all_match)
-        response = result(n)
+        result = sorted(list_of_all_match.items(), key = lambda ele: ele[1], reverse=self)
+        response = result[:n]
