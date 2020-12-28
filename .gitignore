@@ -13,3 +13,9 @@ target
 */.mvn/
 **/*.class
 .mvn
+localProjectSamples
+nodeSamples
+./nodeSamples/
+./localProjectSamples/
+
+
