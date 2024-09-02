@@ -4,6 +4,10 @@ import com.google.gson.Gson;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 
 @Document(collection="SalesContacts")
 public class SalesContact {
@@ -15,6 +19,15 @@ public class SalesContact {
     private AreaDetails areaResponsible;
     private String contactInfo;
     private String designation;
+    private Map additionalInfo;
+
+    public static List<SalesContact> from(Map pinCode) {
+        List<SalesContact> salesContacts = new ArrayList<>();
+        /*pinCode.forEach(
+                pin --> pin
+        );*/
+        return salesContacts;
+    }
 
 
     public String getId() {
@@ -61,5 +74,13 @@ public class SalesContact {
 
         Gson gson = new Gson();
         return gson.toJson(this).toString();
+    }
+
+    public Map getAdditionalInfo() {
+        return additionalInfo;
+    }
+
+    public void setAdditionalInfo(Map additionalInfo) {
+        this.additionalInfo = additionalInfo;
     }
 }

@@ -4,10 +4,12 @@ import co.in.practice.simple.models.SalesContact;
 import co.in.practice.simple.service.exceptions.ServiceException;
 import co.in.practice.simple.service.repositories.SalesContactRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import java.util.UUID;
+import java.util.*;
 
 @Service
 public class SalesContactsService {
@@ -31,6 +33,33 @@ public class SalesContactsService {
 
         salesContactToCreate.setId(uniqueId);
         salesContactRepository.save(salesContactToCreate);
+        return salesContactToCreate;
+    }
+
+    public SalesContact findSpecificContact(String id) {
+        Optional<SalesContact> salesContactOfId = salesContactRepository.findById(id);
+        if (salesContactOfId.isPresent()) {
+            SalesContact salesContact = salesContactOfId.get();
+            return salesContact;
+        }
         return null;
+    }
+
+    public List<SalesContact> searchSalesContactFor(Map pinCode) {
+        if (null == pinCode) {
+            return null;
+        }
+        /*for (Iterator keys: pinCode) {
+
+        }
+        *///ExampleMatcher matcher = ExampleMatcher.matchingAny();
+        Example searchCriteria = Example.of(SalesContact.from(pinCode));
+        List<SalesContact> salesContactOfId = salesContactRepository.findAll(searchCriteria);
+        return salesContactOfId;
+    }
+
+    public List<SalesContact> findAllContact() {
+        List <SalesContact> salesContactList = salesContactRepository.findAll();
+        return salesContactList;
     }
 }

@@ -1,0 +1,13 @@
+@startuml
+
+participant "Backend Layer" as backend
+participant "Application" as app
+
+
+backend --> backend: Product inventory read for sale
+backend --> backend: Product details prepared as file or async message
+backend --> app: Post the file or message or queue
+app --> app: process the message
+app --> app: update the inventory of products
+
+@enduml

@@ -2,21 +2,24 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="SampleHtppClientSDK" />
-        <module name="SampleHttpCache1" />
         <module name="SampleHttpCache2" />
+        <module name="SampleHttpCache1" />
+        <module name="sampleMongoInteract" />
+        <module name="SampleHtppClientSDK" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="jsonchecker" target="1.5" />
-      <module name="SampleHtppClientSDK" target="1.5" />
-      <module name="SampleHttpCache1" target="1.8" />
-      <module name="SampleHttpCache2" target="1.8" />
-      <module name="walletservice" target="1.8" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="21" />
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="SampleHttpCache1" options="-parameters" />
+      <module name="SampleHttpCache2" options="-parameters" />
+      <module name="sampleMongoInteract" options="-parameters" />
+    </option>
   </component>
 </project>

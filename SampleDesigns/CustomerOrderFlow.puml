@@ -1,0 +1,13 @@
+@startuml
+
+participant "Customer" as customer
+participant "Application" as app
+participant "Database" as db
+'participant "Backend Layer" as backend
+
+customer --> app: Request Products to browse
+app --> db : fetch the product details by\n search criteria if required
+db --> app: return products
+app --> customer: display products detail page
+
+@enduml

@@ -1,0 +1,25 @@
+@startuml
+
+participant "Customer" as customer
+participant "Application" as app
+participant "Backend layer" as backend
+participant "Payment Partner" as paymentPartner
+'participant "Backend Layer" as backend
+
+customer --> app: Select product to purchase
+app --> app : manage temporary inventory for selected products
+customer --> app: confirm and pay for product
+app --> paymentPartner: Request payment interface if required
+paymentPartner --> app: payment interface details
+app --> customer: display payment options
+customer --> app: Confirm payment
+app --> paymentPartner: decide on partner selected and request payment
+app --> backend: make entry for purchase confirmed
+app --> app: update the products inventory
+backend --> app: return
+paymentPartner --> app: payment confirmed
+app--> backend: make purchase and billing entry
+backend --> app: return
+app --> customer : Purchase confirmed and bill generated
+
+@enduml

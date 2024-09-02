@@ -7,6 +7,6 @@ public class PileUpContacts {
     public static void main(String args[]) {
 
         Contact contact = new Contact();
-        contact.setId();
+        //contact.setId();
     }
 }

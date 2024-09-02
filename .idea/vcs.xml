@@ -2,5 +2,10 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/NumberGames" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/SearchByEngineSupport" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/SmartThingsApps/weather-color-light-smartapp-nodejs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/dynamoSamples" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/luceneSearcher" vcs="Git" />
   </component>
 </project>

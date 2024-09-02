@@ -2,9 +2,13 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/SampleHttpCache1" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SampleHttpCache1/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SampleHttpCache2" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SampleHttpCache2/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SwaggerSample" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/javacollections" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sampleMongoInteract" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sampleMongoInteract/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/walletservice" charset="UTF-8" />
   </component>
 </project>

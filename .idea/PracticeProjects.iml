@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file:///production/PracticeProjects" />
     <output-test url="file:///test/PracticeProjects" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/WalletServices/src/integrationTest/groovy" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/WalletServices/src/main/scala" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/WalletServices/src/test/groovy" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/walletservice/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/walletservice/src/main/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/SwaggerSample/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/SpringSamples/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/SpringSamples/src/main/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/walletservice/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/walletservice/src/test/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/imagerService/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/MongoExp/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/MongoExp/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/sampleMongoInteract/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sampleMongoInteract/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/sampleMongoInteract/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/sampleMongoInteract/src/test/resources" type="java-test-resource" />
     </content>
     <orderEntry type="library" name="groovy-2.4.5" level="application" />
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
